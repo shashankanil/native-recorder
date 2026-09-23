@@ -1,6 +1,6 @@
 # Plan: Minimal Material 3 Native Android Recorder
 
-> **Plan only.** Do not treat this document as implemented code. No app modules, Gradle projects, or runtime logic belong in this repo until a future build phase.
+> **Implemented:** The native Android application now lives under `app/`. This file remains the design document; see the root README for build and run instructions.
 
 **Author account:** shashankanil  
 **Target repo:** https://github.com/shashankanil/native-recorder  
@@ -36,7 +36,7 @@
 3. **Glance + glance-material3** is the Jetpack-supported way to build App Widgets that share Material 3 color roles with the app ([Glance releases](https://developer.android.com/jetpack/androidx/releases/glance)).
 4. Kotlin + Compose is what Android documentation and samples (Reply, etc.) standardize on for new apps.
 
-### Suggested module layout (future build)
+### Suggested module layout
 
 ```
 app/
@@ -223,7 +223,7 @@ When recording:
 │  Status: Recording 01:24    │
 ```
 
-### Implementation notes (future)
+### Implementation notes
 
 - `GlanceAppWidget` + `GlanceAppWidgetReceiver`
 - `actionRunCallback` / `actionStartActivity` to obtain MediaProjection then start `RecordingForegroundService`
@@ -310,7 +310,7 @@ AppTheme
 
 ---
 
-## 8. Build phases (future — not this repo)
+## 8. Original build phases
 
 1. Skeleton app + M3 theme (light/dark/dynamic) + empty Home.
 2. Mic recording + FGS + file list playback via `MediaPlayer` / ExoPlayer (player only; still M3 chrome).
@@ -320,13 +320,13 @@ AppTheme
 
 ---
 
-## 9. Success criteria for *this* plan repo
+## 9. Design criteria
 
 - [x] Documents Material 3 light/dark + dynamic color + standard components only
 - [x] Stack centered on Kotlin + Compose Material3 + Glance
 - [x] UX research cited (Mobbin, Dribbble, Awwwards, M3, Google Recorder, Android capture docs)
 - [x] Honest permissions / Meet limitations
-- [x] Plan only — no app implementation
+- [x] Native Android implementation under `app/`
 
 ---
 

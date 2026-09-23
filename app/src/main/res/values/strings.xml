@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Recorder</string>
+    <string name="widget_description">Record allowed device audio with your permission.</string>
+</resources>
