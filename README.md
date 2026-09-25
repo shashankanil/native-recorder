@@ -1,6 +1,6 @@
 # Native Recorder
 
-A native Kotlin Android recorder using Jetpack Compose, Material 3 and a Glance home-screen widget. Recordings stay in the app’s private `files/recordings/` directory. No account, Internet permission, analytics or cloud backup.
+A native Kotlin Android recorder using Jetpack Compose, Material 3 and a RemoteViews home-screen widget. Recordings stay in the app’s private `files/recordings/` directory. No account, Internet permission, analytics or cloud backup.
 
 ## Build and run
 
@@ -33,7 +33,11 @@ Device recording asks for Android MediaProjection consent **each session**, incl
 
 ## Widget
 
-Long-press your launcher’s home screen, select **Widgets → Recorder**, and add the widget. **Record device audio** opens the same Activity for permissions and Android’s consent prompt. It cannot grant capture silently. During a session it shows Recording/Paused/Saving status and a Stop button. On Android 8–9 it opens the microphone recorder instead. Widget colors use Glance Material 3, with system dynamic colors where available.
+Long-press your launcher’s home screen, select **Widgets → Recorder**, and add the **2×2** squircle widget.
+
+The home widget is RemoteViews + bitmap artwork (Nothing-inspired monochrome waveform), not a wordy debug card. **Flick up/down** to swipe between Waveform, Timer and Action pages (same translucent trampoline pattern as the step-counter widgets). **Tap** while idle starts **device audio** recording: the Activity only appears for mic/notification permissions and Android’s MediaProjection consent — it cannot grant capture silently. Once recording, the widget shows a red live `MM:SS` pill and energetic bars, updating about once per second. Swipe to the Action page and **tap to stop** without opening the full app. On Android 8–9 a tap opens the in-app microphone recorder instead.
+
+In-app UI stays Compose Material 3 (light/dark + dynamic color). The widget surface is intentionally stark monochrome for glanceable home-grid density.
 
 ## Source layout
 

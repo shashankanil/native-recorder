@@ -79,11 +79,15 @@ class RecordingForegroundService : Service() {
             wakeLock = getSystemService(PowerManager::class.java).newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "$packageName:recording").apply { acquire() }
             refreshWidget()
             ticker = scope.launch {
+                var ticks = 0
                 while (isActive) {
                     delay(500)
                     if (RecordingSession.state.value.phase == Phase.RECORDING) {
                         RecordingSession.state.value = RecordingSession.state.value.copy(elapsedMs = elapsed())
                         updateNotification()
+                        ticks++
+                        // Push a live MM:SS to the home widget about once per second.
+                        if (ticks % 2 == 0) refreshWidget()
                     }
                 }
             }

@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Recorder</string>
-    <string name="widget_description">Record allowed device audio with your permission.</string>
+    <string name="widget_description">Compact device-audio recorder. Flick up or down through waveform, timer and stop. Tap to record or confirm stop.</string>
 </resources>

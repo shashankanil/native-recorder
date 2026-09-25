@@ -14,9 +14,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".widget.WidgetSwipeActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.NativeRecorder.WidgetSwipe"
+            android:finishOnTaskLaunch="true"
+            android:documentLaunchMode="never"
+            android:autoRemoveFromRecents="true" />
         <service android:name=".service.RecordingForegroundService" android:exported="false"
             android:foregroundServiceType="microphone|mediaProjection" />
-        <receiver android:name=".widget.RecorderWidgetReceiver" android:exported="true">
+        <receiver android:name=".widget.RecorderWidgetReceiver" android:exported="true" android:label="@string/app_name">
             <intent-filter><action android:name="android.appwidget.action.APPWIDGET_UPDATE" /></intent-filter>
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/recorder_widget_info" />
         </receiver>
